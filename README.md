@@ -212,31 +212,32 @@ The Executive Decision Intelligence architecture integrates four complementary a
 
 ```mermaid
 flowchart TD
-    subgraph Phase 1: Ingestion & Statistical Diagnostics
-        A1[Multi-Department Data Ingestion] --> A2[Rolling Gaussian Z-Score Outlier Detection]
-        A1 --> A3[Pearson & Spearman Correlation Analysis]
-        A1 --> A4[Budget Variance Waterfall Decomposition]
+    subgraph P1["Phase 1: Ingestion & Statistical Diagnostics"]
+        A1["Multi-Department Data Ingestion"] --> A2["Rolling Gaussian Z-Score Outlier Detection"]
+        A1 --> A3["Pearson & Spearman Correlation Analysis"]
+        A1 --> A4["Budget Variance Waterfall Decomposition"]
     end
 
-    subgraph Phase 2: Operational Driver Attribution
-        B1[Feature Standardization: Z-score Normalization] --> B2[L2 Regularized Ridge Regression]
-        B2 --> B3[Standardized Impact Share Decomposition]
+    subgraph P2["Phase 2: Operational Driver Attribution"]
+        B1["Feature Standardization: Z-score Normalization"] --> B2["L2 Regularized Ridge Regression"]
+        B2 --> B3["Standardized Impact Share Decomposition"]
     end
 
-    subgraph Phase 3: Evidence Grounding & Causality Filtering
-        C1[Two-Tier Causality Validator] --> C2[Direct Accounting Identity: Causal Reconciliation]
-        C1 --> C3[Predictive Association: Statistical Correlation]
-        C2 & C3 --> C4[Evidence Matrix Binding]
+    subgraph P3["Phase 3: Evidence Grounding & Causality Filtering"]
+        C1["Two-Tier Causality Validator"] --> C2["Direct Accounting Identity: Causal Reconciliation"]
+        C1 --> C3["Predictive Association: Statistical Correlation"]
+        C2 --> C4["Evidence Matrix Binding"]
+        C3 --> C4
     end
 
-    subgraph Phase 4: LLM Synthesis & Strategic Interventions
-        D1[C-Suite Briefing Generation] --> D2[Ranked & Feasibility-Scored Action Plan]
-        D1 --> D3[Interactive Natural Language Executive Q&A]
+    subgraph P4["Phase 4: LLM Synthesis & Strategic Interventions"]
+        D1["C-Suite Briefing Generation"] --> D2["Ranked & Feasibility-Scored Action Plan"]
+        D1 --> D3["Interactive Natural Language Executive Q&A"]
     end
 
-    Phase 1 --> Phase 2
-    Phase 2 --> Phase 3
-    Phase 3 --> Phase 4
+    P1 --> P2
+    P2 --> P3
+    P3 --> P4
 ```
 
 ### 1. Rolling Anomaly & Outlier Detection ($Z$-Score Banding)
